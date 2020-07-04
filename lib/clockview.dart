@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_clock/clockDial.dart';
 import 'package:flutter_clock/clockPainter.dart';
 
 class ClockView extends StatefulWidget {
@@ -21,12 +22,21 @@ class _ClockViewState extends State<ClockView> {
     return Container(
       width: 300,
       height: 300,
-      child: Transform.rotate(
-        angle: -pi / 2,
-        child: CustomPaint(
-          painter: ClockPainter(),
+      child: CustomPaint(
+        painter: ClockDial(),
+        child: Transform.rotate(
+          angle: -pi / 2,
+          child: CustomPaint(
+            painter: ClockPainter(),
+          ),
         ),
       ),
+//      child: Transform.rotate(
+//        angle: -pi / 2,
+//        child: CustomPaint(
+//          painter: ClockPainter(),
+//        ),
+//      ),
     );
   }
 }
